@@ -9,7 +9,7 @@ export default function Board() {
   const [squares, setSquares] = useState(Array(9).fill(null));
 
   function handleClick(i) {
-    if (squares[i]) {
+    if (squares[i] || calculateWiner(squares)) {
       return;
     }
     const nextSquares = squares.slice();
