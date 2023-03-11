@@ -4,7 +4,7 @@ function Square() {
   const [value, setValue] = useState(null)
 
   function handleClick() {
-    console.log('Square clicked');
+    setValue('x');
   }
 
   return <button className="square" onClick={handleClick}>{value}</button>;
