@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-function Square({ value, onSquareCLick }) {
-  return <button className="square" onClick={onSquareCLick}>{value}</button>;
+export default function Game() {
+  return <Board />
 }
 
-export default function Board() {
+function Board() {
   const [xIsNext, setXIsNext] = useState(true);
   const [squares, setSquares] = useState(Array(9).fill(null));
   const winner = calculateWiner(squares);
@@ -52,6 +52,10 @@ export default function Board() {
       <Square value={squares[8]} onSquareCLick={() => handleClick(8)} />
     </div>
   </>
+}
+
+function Square({ value, onSquareCLick }) {
+  return <button className="square" onClick={onSquareCLick}>{value}</button>;
 }
 
 function calculateWiner(squares) {
